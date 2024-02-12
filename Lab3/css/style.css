@@ -1,0 +1,422 @@
+        /* Загальні стилі для всієї сторінки */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            margin-left: 120px;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 50%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Додані класи та ідентифікатори */
+        .news-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #photo-gallery {
+            margin-top: 20px;
+        }
+
+        /* Інші властивості */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .list-section ul {
+            margin-left: 20px;
+        }
+
+        .list-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Інлайнові стилі */
+        section {
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        section p{
+            color: #333;
+        }
+
+        section h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p{
+            margin-left: 600px;
+        }
+
+        /* Додані властивості для тексту */
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        /* Додані властивості для box-моделі */
+        .box-model {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Додані властивості для гіперпосилань */
+        a.button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Додані властивості для списків */
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        /* Додані властивості для display і overflow */
+        .inline-block-container {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            overflow: auto;
+            border: 1px solid #ccc;
+        }
+
+        /* Додані властивості для pseudo-class */
+        input[type="text"]:focus {
+            border: 2px solid #007bff;
+        }
+
+        /* Додані властивості для opacity */
+        .opacity-container {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            opacity: 0.8;
+        }
+        .burger-menu {
+            display: none;
+        }
+        .burger-icon{
+            filter: brightness(0) invert(1);
+            cursor: pointer;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+
+         /* Анімація появи для класу .news */
+.news {
+    opacity: 0;
+    animation: fadeInNews 1s ease forwards;
+}
+
+/* Анімація появи для класу .photo */
+.photo {
+    opacity: 0;
+    animation: fadeInPhoto 1s ease forwards;
+    animation-delay: 0.5s; /* Затримка для анімації появи .photo */
+}
+
+/* Анімація появи для класу .text */
+.text {
+    opacity: 0;
+    animation: fadeInText 1s ease forwards;
+    animation-delay: 1s; /* Затримка для анімації появи .text */
+}
+
+/* Анімація появи для класу .symbols */
+.symbols {
+    opacity: 0;
+    animation: fadeInSymbols 1s ease forwards;
+    animation-delay: 1.5s; /* Затримка для анімації появи .symbols */
+}
+
+/* Анімація появи для класу .table */
+.table {
+    opacity: 0;
+    animation: fadeInTable 1s ease forwards;
+    animation-delay: 2s; /* Затримка для анімації появи .table */
+}
+
+/* Анімація появи для класу .list */
+.list {
+    opacity: 0;
+    animation: fadeInList 1s ease forwards;
+    animation-delay: 2.5s; /* Затримка для анімації появи .list */
+}
+
+/* Анімація появи для класу .forms */
+.forms {
+    opacity: 0;
+    animation: fadeInForms 1s ease forwards;
+    animation-delay: 3s; /* Затримка для анімації появи .forms */
+}
+
+/* Анімація появи для класу .frame */
+.frame {
+    opacity: 0;
+    animation: fadeInFrame 1s ease forwards;
+    animation-delay: 3.5s; /* Затримка для анімації появи .frame */
+}
+
+/* Анімація появи для класу .audio */
+.audio {
+    opacity: 0;
+    animation: fadeInAudio 1s ease forwards;
+    animation-delay: 4s; /* Затримка для анімації появи .audio */
+}
+
+/* Анімація появи для класу .maps */
+.maps {
+    opacity: 0;
+    animation: fadeInMaps 1s ease forwards;
+    animation-delay: 4.5s; /* Затримка для анімації появи .maps */
+}
+
+@keyframes fadeInNews {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInPhoto {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes fadeInSymbols {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInTable {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInForms {
+    from {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+@keyframes fadeInFrame {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInAudio {
+    from {
+        opacity: 0;
+        transform: skewX(-45deg);
+    }
+    to {
+        opacity: 1;
+        transform: skewX(0);
+    }
+}
+
+@keyframes fadeInMaps {
+    from {
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+}
+
+
+
+@media screen and (max-width: 670px) {
+            .burger-menu {
+                display: block;
+            }
+        
+            .desktop-menu {
+                display: none;
+            }
+        
+            .mobile-menu {
+                display: block;
+            }
+        }
+        
+
+
+@media screen and (min-width: 670px) {
+    .main {
+        flex-direction: row;
+        align-items: flex-start; 
+    }
+    
+    .gallery img {
+        width: 50%; 
+    }
+
+    .inline-block-container {
+        display: flex;
+        align-items: center;
+    }
+
+        
+        footer {
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+        }
+    
+        footer p{
+            margin-left: 0;
+            margin-bottom: 10px; 
+        }
+
+        .mobile-menu{
+            display: none;
+        }
+
+
+        iframe {
+        width: 500px;
+        height: 300px;
+    }
+}
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фотоблог</title>
+</head>
+<body>
+    <header>
+        <h1>Мій Сайт</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Портфоліо</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Новини</h2>
+            <article>
+                <h3>Перша новина</h3>
+                <p>Опис першої новини...</p>
+            </article>
+            <article>
+                <h3>Друга новина</h3>
+                <p>Опис другої новини...</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Фотогалерея</h2>
+            <div class="gallery">
+                <a href="https://unsplash.com" target="_blank">
+                    <img src="image/photo_1.webp" alt="Фото 1" width="300px" height="200px">
+                </a>
+            </div>
+        </section>
+        
+
+        <section>
+            <h2>Текст з заголовком</h2>
+            <div>
+                <h3>Підзаголовок</h3>
+                <p>Це простий текст з <strong>відформатованим жирним шрифтом</strong> та <em>курсивом</em>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Спеціальні символи</h2>
+            <p>Тут ми використаємо кілька спеціальних символів: &copy; &lt; &gt; &amp;.</p>
+        </section>
+
+        <section>
+            <h2>Таблиця</h2>
+            <table border="1">
+                <tr>
+                    <th>Ім'я</th>
+                    <th>Вік</th>
+                </tr>
+                <tr>
+                    <td>Іван</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Марія</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Списки</h2>
+            <h3>Неупорядкований список</h3>
+            <ul>
+                <li>Елемент 1</li>
+                <li>Елемент 2</li>
+                <li>Елемент 3</li>
+            </ul>
+            
+            <h3>Упорядкований список</h3>
+            <ol>
+                <li>Елемент 1</li>
+                <li>Елемент 2</li>
+                <li>Елемент 3</li>
+            </ol>
+            
+            <h3>Описовий список</h3>
+            <dl>
+                <dt>Термін 1</dt>
+                <dd>Опис терміну 1</dd>
+                <dt>Термін 2</dt>
+                <dd>Опис терміну 2</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Форми</h2>
+            <form action="#" method="post">
+
+                <label for="color">Color</label>
+                <input type="color" id="color" name="color"><br>
+
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date"><br>
+
+                <label for="range">Range</label>
+                <input type="range" id="range" name="range"><br>
+
+                <label for="name">Ім'я:</label>
+                <input type="text" id="name" name="name"><br>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+                
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password"><br>
+                
+                <label for="comment">Коментар:</label><br>
+                <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+                
+                <label for="gender">Стать:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Чоловіча</option>
+                    <option value="female">Жіноча</option>
+                    <option value="other">Інше</option>
+                </select><br>
+                
+                <label for="agree">Я згоден з умовами:</label>
+                <input type="checkbox" id="agree" name="agree" value="agree"><br>
+                
+                <input type="submit" value="Надіслати">
+            </form>
+        </section>
+
+        <section>
+            <h2>Фрейми</h2>
+            <iframe src="https://www.example.com" width="600" height="400"></iframe>
+        </section>
+
+        <section>
+            <h2>Аудіо та відео</h2>
+            <audio controls>
+                <source src="audio/music.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <video controls width="600">
+                <source src="video/movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section>
+            <h2>Карти</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253799.2360691133!2d-0.24168157540970913!3d51.52877184090268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b7c892f3bf%3A0x8f0b1d4ed4c186!2sLondon%2C%20UK!5e0!3m2!1sen!2sua!4v1644594054561!5m2!1sen!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Мій Фотоблог</p>
+    </footer>
+</body>
+</html>
