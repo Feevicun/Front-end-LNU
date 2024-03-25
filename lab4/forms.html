@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+/* Form styles */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333333;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #555555;
+}
+
+/* Button styles */
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #555555;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <section class="survey">
+    <h2>Survey</h2>
+    <form id="surveyForm">
+      <label for="q1">Question 1: What is your favorite programming language?</label><br>
+      <input type="text" id="q1" name="q1"><br><br>
+      
+      <label for="q2">Question 2: How would you rate your programming skills?</label><br>
+      <select id="q2" name="q2">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+        <input type="">
+      </select><br><br>
+
+      <fieldset>
+        <legend>Question 3: Do you prefer frontend or backend development?</legend>
+        <input type="radio" id="q3_frontend" name="q3" value="frontend">
+        <label for="q3_frontend">Frontend</label>
+        <input type="radio" id="q3_backend" name="q3" value="backend">
+        <label for="q3_backend">Backend</label><br><br>
+      </fieldset>
+      <label for="q4">Question 4: How many years of programming experience do you have?</label><br>
+      <input type="number" id="q4" name="q4"><br><br>
+      <fieldset>
+        <legend>Question 5: Which programming languages are you proficient in? (Check all that apply)</legend>
+        <label for="q5">Select languages:</label><br>
+        <select id="q5" name="q5[]" multiple>
+          <optgroup label="Back-end languages">
+            <option value="python">Python</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</option>
+          </optgroup>
+          <optgroup label="Front-end languages">
+            <option value="javascript">JavaScript</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+          </optgroup>
+        </select><br><br>
+      </fieldset>
+      <label for="q6">Question 6: What is your preferred development environment (e.g., IDE)?</label><br>
+      <input type="text" id="q6" name="q6"><br><br>
+      <label for="q7">Question 7: How do you stay updated with the latest trends in technology?</label><br>
+      <textarea id="q7" name="q7"></textarea><br><br>
+      <label for="q8">Question 8: Have you contributed to any open-source projects? If so, please provide details.</label><br>
+      <textarea id="q8" name="q8"></textarea><br><br>
+      <label for="q9">Question 9: What is your favorite programming paradigm?</label><br>
+      <input type="text" id="q9" name="q9"><br><br>
+      <fieldset>
+        <legend>Question 10: Do you prefer working in a team or independently?</legend>
+        <select id="q10" name="q10">
+          <option value="team">Team</option>
+          <option value="independently">Independently</option>
+        </select><br><br>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+    <ul id="surveyResults"></ul>
+
+  <script>
+    // localStorage.clear();
+const form = document.getElementById('surveyForm');
+// Loading survey data from localStorage
+let surveys = JSON.parse(localStorage.getItem('surveys')) || [];
+// Add an event handler for the form
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Stop the valid form submission event
+  const formData = new FormData(form);
+  const data = {};
+  for (let [key, value] of formData.entries()) {
+    data[key] = value;
+  }
+// Store survey data in LocalStorage
+  surveys.push(data);
+  localStorage.setItem('surveys', JSON.stringify(surveys));
+
+  alert('Survey submitted successfully!');
+  form.reset(); // Clear the form
+});
+const surveyResultsList = document.getElementById('surveyResults');
+// Function to display survey results in the list
+function displaySurveyResults(surveys) {
+    // Clear existing list items
+    surveyResultsList.innerHTML = '';
+    surveys.forEach(survey => {
+        const li = document.createElement('li');
+        li.textContent = `Name: ${survey.q1}, Rating: ${survey.q2}, Experience: ${survey.q4} years`;
+        surveyResultsList.appendChild(li);
+    });
+}
+// Display all survey results initially
+displaySurveyResults(surveys);
+
+// Function to filter and display survey results
+function filterAndDisplayResults() {
+    const backendDevelopers = surveys.filter(survey => survey.q3 === 'backend');
+    displaySurveyResults(backendDevelopers);
+}
+  </script>
+  </body>
+  </html>
